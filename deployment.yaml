@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plane-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plane-demo
+  template:
+    metadata:
+      labels:
+        app: plane-demo
+    spec:
+      containers:
+      - name: plane-demo
+        image: nginx
+        ports:
+        - containerPort: 80
